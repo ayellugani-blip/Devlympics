@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Rich Radiant Modern Palette */
+  --color-primary-blue: #2563EB;
+  --color-primary-indigo: #4F46E5;
+  --color-primary-cyan: #06B6D4;
+  --color-primary-violet: #7C3AED;
+  --color-accent-amber: #F59E0B;
+  --color-accent-emerald: #10B981;
+  --color-accent-coral: #F43F5E;
+  
+  --color-text-main: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  
+  --color-bg-base: #F8FAFC;
+  --color-border-card: #E2E8F0;
+  --color-border-glow: #C7D2FE;
+  
+  /* Font size multipliers for Accessibility */
+  --font-scale: 1;
+}
+
+/* Accessibility font scale states */
+html.text-size-lg {
+  --font-scale: 1.15;
+}
+html.text-size-xl {
+  --font-scale: 1.3;
+}
+
+/* High Contrast Mode */
+html.high-contrast {
+  --color-bg-base: #FFFFFF;
+  --color-text-main: #000000;
+  --color-text-secondary: #0F172A;
+  --color-border-card: #475569;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: calc(1rem * var(--font-scale));
+  line-height: 1.6;
+  background-color: var(--color-bg-base);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--color-text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible focus styling */
+*:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* Modern Gradient Card with soft frosted glass depth */
+.sangam-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 255, 0.90) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(79, 70, 229, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sangam-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 14px 30px -4px rgba(79, 70, 229, 0.10), 0 4px 12px -2px rgba(6, 182, 212, 0.06);
+}
+
+/* Radiant Multi-Stop Gradient Button */
+.sangam-gradient-btn {
+  background: linear-gradient(135deg, #2563EB 0%, #4F46E5 50%, #06B6D4 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px 0 rgba(79, 70, 229, 0.30);
+  transition: all 0.25s ease;
+}
+
+.sangam-gradient-btn:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #4338CA 50%, #0891B2 100%);
+  box-shadow: 0 8px 22px 0 rgba(79, 70, 229, 0.40);
+  transform: translateY(-1px);
+}
+
+/* Gradient Text Accent */
+.sangam-gradient-text {
+  background: linear-gradient(135deg, #2563EB 0%, #4F46E5 45%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Radiant Mesh Ambient Orbs */
+.bg-radiant-mesh {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 15%, rgba(6, 182, 212, 0.14) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 45%);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbar with soft indigo gradient */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C7D2FE 0%, #A5B4FC 100%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A5B4FC 0%, #818CF8 100%);
+}
